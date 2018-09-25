@@ -385,12 +385,12 @@ function newPostForCurrentUser(title, text) {
  */
 function showSection(sectionElement, buttonElement) {
   recentPostsSection.style.display = 'none';
-  userPostsSection.style.display = 'none';
-  topUserPostsSection.style.display = 'none';
+  //userPostsSection.style.display = 'none';
+  //topUserPostsSection.style.display = 'none';
   addPost.style.display = 'none';
   recentMenuButton.classList.remove('is-active');
-  myPostsMenuButton.classList.remove('is-active');
-  myTopPostsMenuButton.classList.remove('is-active');
+  //myPostsMenuButton.classList.remove('is-active');
+  //myTopPostsMenuButton.classList.remove('is-active');
 
   if (sectionElement) {
     sectionElement.style.display = 'block';
@@ -487,12 +487,15 @@ window.addEventListener('load', function() {
   recentMenuButton.onclick = function() {
     showSection(recentPostsSection, recentMenuButton);
   };
+/*
   myPostsMenuButton.onclick = function() {
     showSection(userPostsSection, myPostsMenuButton);
   };
   myTopPostsMenuButton.onclick = function() {
     showSection(topUserPostsSection, myTopPostsMenuButton);
   };
+
+*/
   addButton.onclick = function() {
     showSection(addPost);
     messageInput.value = '';
