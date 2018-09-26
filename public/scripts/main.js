@@ -32,7 +32,8 @@ function startDatabaseQueries() {
   var temperature = firebase.database().ref('sensor/1/00/temperature');
   var humidity = firebase.database().ref('sensor/1/00/humidity');
 
-  document.getElementById("temp").innerHTML = temperature;
+  document.getElementById("demo").innerHTML = temperature;
+  document.getElementById("demo").innerHTML = humidity;
 }
 
 /**
