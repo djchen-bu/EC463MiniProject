@@ -28,9 +28,11 @@ var recentMenuButton = document.getElementById('menu-recent');
 
 function startDatabaseQueries() {
   // [START my_top_posts_query]
+  var d = new Date();
+  var min = d.getMinutes();
   var myUserId = firebase.auth().currentUser.uid;
-  var temperature = firebase.database().ref('sensor/1/00/temperature');
-  var humidity = firebase.database().ref('sensor/1/00/humidity');
+  var temperature = firebase.database().ref('sensor/1/' + min + '/temperature');
+  var humidity = firebase.database().ref('sensor/1/' + min + '/humidity');
 
   temperature.on('value', function(snapshot) {
     document.getElementById("demo").innerHTML = "Temperature: " + snapshot.val();
@@ -39,6 +41,8 @@ function startDatabaseQueries() {
   humidity.on('value', function(snapshot) { 
     document.getElementById("demo2").innerHTML = "Humidity: " + snapshot.val();
   });
+
+  console.log(min);
 }
 
 /**
@@ -50,7 +54,6 @@ function writeUserData(userId, name, email, imageUrl) {
     username: name,
     email: email,
     profile_picture : imageUrl,
-    sensor_num : 1
   });
 }
 // [END basic_write]
@@ -168,3 +171,12 @@ window.addEventListener('load', function() {
   };
 
 }, false);
+
+var now = new Date();
+var delay = 60 * 1000; // 1 min in msec
+var start = delay - (now.getSeconds()) * 1000 + now.getMilliseconds();
+
+setTimeout(function setTimer() {
+  startDatabaseQueries();
+    setTimeout(setTimer, delay);
+}, start);    
