@@ -10,7 +10,7 @@ We decided to use Firebase as our hosting site since it had a lot of nice functi
 
 We first set up the google authentication. Upon clicking the sign in button, it first checks if the user is already signed in. At the same time there is a firebase function that detects authentication change and if the user is logged in, it retrieves the appropriate user info like name and email, and creates/updates the entry in the database. Although we did not implement sensor data based on uid of the user, it could be done with the uid already stored. 
 
-In order to emulate the sensor we setup a simple structure in which it has temperature and humidity data under every minute. In the startDatabaseQueries function
+In order to emulate the sensor we setup a simple structure in which there is temperature and humidity data under every minute. In the startDatabaseQueries function. (shown below)
 
 ```
 function startDatabaseQueries() {
@@ -32,13 +32,13 @@ function startDatabaseQueries() {
 }
 ```
 
-It takes the current minute number and retrieves the appropriate data values based on the current time on a minute scale, and then outputs it to the html page.
+It takes the current minute number and retrieves the appropriate data values based on the current time on a minute scale, and then outputs it to the html page, therefore replicating a live sensor reading one could view away from their house for instance.
 
 
 ## Contributions
 
-Devin: Database query and setup, google authentication, base html formatting
+Devin Chen: Database query and setup, google authentication, base html formatting
 
-Adian: Google authenication, firebase setup
+Adian Mikulic: Google authenication, firebase setup
 
 
