@@ -39,6 +39,6 @@ It takes the current minute number and retrieves the appropriate data values bas
 
 Devin Chen: Database query and setup, google authentication, base html formatting
 
-Adian Mikulic: Google authenication, firebase setup
+Adian Mikulic: Google authenication, firebase setup, base html formatting
 
 
