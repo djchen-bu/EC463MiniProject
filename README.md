@@ -32,7 +32,7 @@ function startDatabaseQueries() {
 }
 ```
 
-It takes the current minute number and retrieves the appropriate data values based on the current time on a minute scale, and then outputs it to the html page, therefore replicating a live sensor reading one could view away from their house for instance.
+It takes the current minute number and retrieves the appropriate data values based on the current time on a minute scale, and then outputs it to the html page, thus replicating a live sensor reading one could view away from their house for instance.
 
 
 ## Contributions
