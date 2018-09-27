@@ -4,7 +4,7 @@ This is a very simple implementation of a web app retrieving sensor data from a 
 
 ## Hosting
 
-We decided to use Firebase as our hosting site since it had a lot of nice functions built in, like google authentication and database.
+We decided to use Firebase as our hosting site since it had a lot of nice functions built in, like google authentication and a database.
 
 ## Web App
 
@@ -39,6 +39,6 @@ It takes the current minute number and retrieves the appropriate data values bas
 
 Devin: Database query and setup, google authentication, base html formatting
 
-Adian:
+Adian: Google authenication, firebase setup
 
 
