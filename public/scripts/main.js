@@ -27,7 +27,7 @@ var recentMenuButton = document.getElementById('menu-recent');
 // [START write_fan_out]
 
 function startDatabaseQueries() {
-  // [START my_top_posts_query]
+
   var d = new Date();
   var min = d.getMinutes();
   var myUserId = firebase.auth().currentUser.uid;
@@ -35,14 +35,13 @@ function startDatabaseQueries() {
   var humidity = firebase.database().ref('sensor/1/' + min + '/humidity');
 
   temperature.on('value', function(snapshot) {
-    document.getElementById("demo").innerHTML = "Temperature: " + snapshot.val();
+    document.getElementById("temp").innerHTML = "Temperature: " + snapshot.val();
   });
 
   humidity.on('value', function(snapshot) { 
-    document.getElementById("demo2").innerHTML = "Humidity: " + snapshot.val();
+    document.getElementById("humid").innerHTML = "Humidity: " + snapshot.val();
   });
 
-  console.log(min);
 }
 
 /**
